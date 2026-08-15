@@ -2,6 +2,7 @@
   "uuid": "orientation-aware-tiling@sekai013.dev",
   "name": "Orientation-Aware Tiling",
   "description": "Use Super+Up/Down differently on portrait and landscape monitors.",
+  "url": "https://github.com/sekai013/gnome-orientation-aware-tiling",
   "shell-version": ["50"],
   "settings-schema": "dev.sekai013.gnome-shell.extensions.orientation-aware-tiling",
   "version": 1
