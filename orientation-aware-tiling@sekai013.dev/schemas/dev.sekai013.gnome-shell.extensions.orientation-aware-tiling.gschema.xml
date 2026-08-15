@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
   <schema
-    id="dev.sekai013.gnome-shell.extensions.monitor-aware-keybindings"
-    path="/dev/sekai013/gnome-shell/extensions/monitor-aware-keybindings/">
+    id="dev.sekai013.gnome-shell.extensions.orientation-aware-tiling"
+    path="/dev/sekai013/gnome-shell/extensions/orientation-aware-tiling/">
     <key name="window-up" type="as">
       <default>['&lt;Super&gt;Up']</default>
-      <summary>Monitor-aware window up action</summary>
+      <summary>Orientation-aware window up action</summary>
       <description>Tile to the top half on portrait monitors, otherwise maximize.</description>
     </key>
     <key name="window-down" type="as">
       <default>['&lt;Super&gt;Down']</default>
-      <summary>Monitor-aware window down action</summary>
+      <summary>Orientation-aware window down action</summary>
       <description>Tile to the bottom half on portrait monitors, otherwise unmaximize.</description>
     </key>
   </schema>

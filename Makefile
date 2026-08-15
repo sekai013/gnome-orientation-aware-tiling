@@ -1,4 +1,4 @@
-UUID := monitor-aware-keybindings@sekai013.dev
+UUID := orientation-aware-tiling@sekai013.dev
 SOURCE_DIR := $(UUID)
 EXTENSIONS_DIR := $(HOME)/.local/share/gnome-shell/extensions
 DEST_DIR := $(EXTENSIONS_DIR)/$(UUID)

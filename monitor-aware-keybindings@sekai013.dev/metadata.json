@@ -1,8 +1,0 @@
-{
-  "uuid": "monitor-aware-keybindings@sekai013.dev",
-  "name": "Monitor-Aware Keybindings",
-  "description": "Use Super+Up/Down differently on portrait and landscape monitors.",
-  "shell-version": ["50"],
-  "settings-schema": "dev.sekai013.gnome-shell.extensions.monitor-aware-keybindings",
-  "version": 1
-}

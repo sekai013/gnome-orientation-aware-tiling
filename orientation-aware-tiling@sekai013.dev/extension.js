@@ -4,7 +4,7 @@ import Shell from 'gi://Shell';
 import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
-export default class MonitorAwareKeybindingsExtension extends Extension {
+export default class OrientationAwareTilingExtension extends Extension {
     enable() {
         this._settings = this.getSettings();
 
