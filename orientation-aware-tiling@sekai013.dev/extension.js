@@ -48,6 +48,9 @@ export default class OrientationAwareTilingExtension extends Extension {
     }
 
     _moveToHalf(window, top) {
+        if (!this._canTile(window))
+            return;
+
         const area = window.get_work_area_current_monitor();
         const topHeight = Math.floor(area.height / 2);
         const height = top ? topHeight : area.height - topHeight;
@@ -63,9 +66,6 @@ export default class OrientationAwareTilingExtension extends Extension {
     }
 
     _tileHalf(window, top) {
-        if (!this._canTile(window))
-            return;
-
         if (window.get_maximize_flags() === 0) {
             this._moveToHalf(window, top);
             return;
