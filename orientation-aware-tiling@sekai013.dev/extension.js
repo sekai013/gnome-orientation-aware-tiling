@@ -47,13 +47,7 @@ export default class OrientationAwareTilingExtension extends Extension {
         return window.allows_move() && window.allows_resize();
     }
 
-    _tileHalf(window, top) {
-        if (!this._canTile(window))
-            return;
-
-        if (window.is_maximized())
-            window.unmaximize();
-
+    _moveToHalf(window, top) {
         const area = window.get_work_area_current_monitor();
         const topHeight = Math.floor(area.height / 2);
         const height = top ? topHeight : area.height - topHeight;
@@ -66,6 +60,40 @@ export default class OrientationAwareTilingExtension extends Extension {
             area.width,
             height
         );
+    }
+
+    _tileHalf(window, top) {
+        if (!this._canTile(window))
+            return;
+
+        if (window.get_maximize_flags() === 0) {
+            this._moveToHalf(window, top);
+            return;
+        }
+
+        let applied = false;
+        const signalIds = [];
+
+        const applyWhenUnmaximized = () => {
+            if (applied || window.get_maximize_flags() !== 0)
+                return;
+
+            applied = true;
+            for (const signalId of signalIds)
+                window.disconnect(signalId);
+
+            this._moveToHalf(window, top);
+        };
+
+        signalIds.push(
+            window.connect('notify::maximized-horizontally', applyWhenUnmaximized)
+        );
+        signalIds.push(
+            window.connect('notify::maximized-vertically', applyWhenUnmaximized)
+        );
+
+        window.unmaximize();
+        applyWhenUnmaximized();
     }
 
     _handleUp() {
